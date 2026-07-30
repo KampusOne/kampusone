@@ -1,0 +1,12 @@
+<svg width="420" height="112" viewBox="0 0 420 112" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">KampusOne</title>
+  <desc id="desc">K1 monogram and KampusOne wordmark with Already Ready for School tagline.</desc>
+  <g transform="translate(2 6)" fill="#C35D38">
+    <path d="M8 9C8 4.03 12.03 0 17 0H39C43.97 0 48 4.03 48 9V31.4C48 34.26 46.77 36.98 44.63 38.88L33.14 49.1C30.34 51.59 30.38 55.98 33.22 58.42L55.75 77.8C62.19 83.34 58.27 93.9 49.77 93.9H17C12.03 93.9 8 89.87 8 84.9V9Z"/>
+    <path d="M69.2 23.58L85.04 4.33C87.4 1.46 90.92 0 94.64 0H106C110.97 0 115 4.03 115 9V84.9C115 89.87 110.97 93.9 106 93.9H91.2C86.23 93.9 82.2 89.87 82.2 84.9V41.62L75.6 48.78C72.41 52.23 67.07 52.72 63.29 49.91L55.31 43.97C51.17 40.89 50.43 34.96 53.68 30.94L69.2 23.58Z"/>
+  </g>
+  <g transform="translate(137 12)">
+    <text x="0" y="44" fill="#C35D38" font-family="Inter, Arial, sans-serif" font-size="43" font-weight="500" letter-spacing="-2.2">KampusOne</text>
+    <text x="2" y="72" fill="#9A8D84" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="500" letter-spacing="2.5">ALREADY READY FOR SCHOOL</text>
+  </g>
+</svg>
