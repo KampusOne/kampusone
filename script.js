@@ -160,6 +160,114 @@
     revealNodes.forEach((node) => revealObserver.observe(node));
   }
 
+  const motionSceneNodes = document.querySelectorAll(
+    ".story-section, .signal-section, .schedule-story, .movement-story, .campus-economy, .department-story, .launch-teaser, .about-origin, .about-direction, .team-editorial, .blog-index",
+  );
+
+  if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+    if (!reducedMotion.matches) motionSceneNodes.forEach((node) => node.classList.add("is-motion-active"));
+  } else {
+    const motionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("is-motion-active", entry.isIntersecting);
+        });
+      },
+      { threshold: 0.16, rootMargin: "-6% 0px -8% 0px" },
+    );
+    motionSceneNodes.forEach((node) => motionObserver.observe(node));
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    document.body.classList.toggle("is-page-hidden", document.hidden);
+  });
+
+  const mapDemo = document.querySelector("[data-map-demo]");
+  const mapRouteTitle = mapDemo?.querySelector("[data-map-route-title]");
+  const mapRouteDetail = mapDemo?.querySelector("[data-map-route-detail]");
+  const mapReplay = mapDemo?.querySelector("[data-map-replay]");
+  let routeReplayTimer = 0;
+  let mapTapTimer = 0;
+
+  function replayMapRoute() {
+    if (!mapDemo || reducedMotion.matches) return;
+    window.clearTimeout(routeReplayTimer);
+    mapDemo.classList.remove("is-route-replaying");
+    void mapDemo.offsetWidth;
+    mapDemo.classList.add("is-route-replaying");
+    routeReplayTimer = window.setTimeout(() => mapDemo.classList.remove("is-route-replaying"), 1100);
+  }
+
+  mapDemo?.querySelectorAll("[data-map-stop]").forEach((stop) => {
+    stop.addEventListener("click", () => {
+      mapDemo.querySelectorAll("[data-map-stop]").forEach((item) => {
+        const selected = item === stop;
+        item.classList.toggle("is-selected", selected);
+        item.setAttribute("aria-pressed", String(selected));
+      });
+      if (mapRouteTitle) mapRouteTitle.textContent = stop.dataset.routeTitle || stop.textContent;
+      if (mapRouteDetail) mapRouteDetail.textContent = stop.dataset.routeDetail || "Route selected";
+      replayMapRoute();
+    });
+  });
+
+  mapReplay?.addEventListener("click", replayMapRoute);
+
+  mapDemo?.addEventListener("pointerdown", (event) => {
+    const rect = mapDemo.getBoundingClientRect();
+    const x = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
+    const y = clamp(((event.clientY - rect.top) / rect.height) * 100, 0, 100);
+    mapDemo.style.setProperty("--map-tap-x", `${x.toFixed(1)}%`);
+    mapDemo.style.setProperty("--map-tap-y", `${y.toFixed(1)}%`);
+    window.clearTimeout(mapTapTimer);
+    mapDemo.classList.remove("has-map-tap");
+    void mapDemo.offsetWidth;
+    mapDemo.classList.add("has-map-tap");
+    mapTapTimer = window.setTimeout(() => mapDemo.classList.remove("has-map-tap"), 700);
+    if (!(event.target instanceof Element) || !event.target.closest("button")) replayMapRoute();
+  });
+
+  const tutorPreview = document.querySelector(".tutor-preview");
+  const tutorStatus = tutorPreview?.querySelector("[data-tutor-status]");
+  let tutorTimer = 0;
+
+  tutorPreview?.querySelectorAll("[data-tutor-subject]").forEach((subjectButton) => {
+    subjectButton.addEventListener("click", () => {
+      tutorPreview.querySelectorAll("[data-tutor-subject]").forEach((item) => {
+        item.setAttribute("aria-pressed", String(item === subjectButton));
+      });
+      if (tutorStatus) tutorStatus.textContent = `Matching help for ${subjectButton.dataset.tutorSubject}`;
+      window.clearTimeout(tutorTimer);
+      tutorPreview.classList.remove("is-tutor-switching");
+      void tutorPreview.offsetWidth;
+      tutorPreview.classList.add("is-tutor-switching");
+      tutorTimer = window.setTimeout(() => tutorPreview.classList.remove("is-tutor-switching"), 700);
+    });
+  });
+
+  const launchPhoneTimers = new WeakMap();
+  document.querySelectorAll("[data-launch-phone]").forEach((phone) => {
+    phone.addEventListener("click", () => {
+      const existingTimer = launchPhoneTimers.get(phone);
+      if (existingTimer) window.clearTimeout(existingTimer);
+      const state = phone.querySelector(".launch-coming-state");
+      if (!state) return;
+      state.hidden = false;
+      phone.classList.remove("is-coming");
+      void phone.offsetWidth;
+      phone.classList.add("is-coming");
+      phone.setAttribute("aria-label", `Coming soon on ${phone.dataset.store || "your app store"}`);
+      const timer = window.setTimeout(() => {
+        phone.classList.remove("is-coming");
+        window.setTimeout(() => {
+          state.hidden = true;
+          phone.setAttribute("aria-label", `Open the ${phone.dataset.store || "app"} preview`);
+        }, 220);
+      }, 1900);
+      launchPhoneTimers.set(phone, timer);
+    });
+  });
+
   if (!reducedMotion.matches && window.matchMedia("(pointer: fine)").matches) {
     document.querySelectorAll("[data-tilt]").forEach((card) => {
       const reverse = card.hasAttribute("data-tilt-reverse") ? -1 : 1;
@@ -197,6 +305,20 @@
         scene.style.setProperty("--scene-y", "0px");
         scene.style.setProperty("--scene-x-inverse", "0px");
         scene.style.setProperty("--scene-y-inverse", "0px");
+      });
+    });
+
+    document.querySelectorAll("[data-map-demo]").forEach((map) => {
+      map.addEventListener("pointermove", (event) => {
+        const rect = map.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        map.style.setProperty("--map-pan-x", `${(x * -8).toFixed(1)}px`);
+        map.style.setProperty("--map-pan-y", `${(y * -8).toFixed(1)}px`);
+      });
+      map.addEventListener("pointerleave", () => {
+        map.style.setProperty("--map-pan-x", "0px");
+        map.style.setProperty("--map-pan-y", "0px");
       });
     });
   }

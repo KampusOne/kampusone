@@ -133,7 +133,8 @@
           </ul>
         </div>
         <div class="feed-stage" aria-label="Campus news feed preview">
-          <div class="feed-topline"><span>Your campus</span><span>Today</span></div>
+          <div class="feed-topline"><span>Your campus</span><span class="feed-live"><i aria-hidden="true"></i>Today</span></div>
+          <div class="feed-live-toast" aria-hidden="true"><i></i><span>New campus update</span></div>
           <article class="feed-card feed-card-featured">
             <span>ACADEMIC</span><h3>Course registration guide</h3>
             <p>A clear checklist for what to confirm before submission.</p><small>For your department</small>
@@ -154,6 +155,7 @@
           <span class="schedule-time time-one">08:00</span>
           <span class="schedule-time time-two">10:00</span>
           <span class="schedule-time time-three">13:00</span>
+          <div class="schedule-now-line" aria-hidden="true"><span>NOW</span></div>
           <article class="class-block class-block-one"><small>COE 211</small><strong>Computer Architecture</strong><span>LT 2 · 08:00–10:00</span></article>
           <article class="class-block class-block-two"><small>MTH 211</small><strong>Engineering Mathematics</strong><span>Main Auditorium · 10:00–12:00</span></article>
           <article class="class-block class-block-three"><small>PLAN</small><strong>Study window</strong><span>Library · 13:00</span></article>
@@ -186,20 +188,27 @@
             <span>Lecture Theatre 2</span><small>6 min</small>
           </div>
         </div>
-        <div class="campus-map" aria-label="Illustrated campus walking route">
+        <div class="campus-map" data-map-demo aria-label="Interactive campus walking route. Tap a stop to inspect it or tap the map to replay the route.">
           <div class="map-grid" aria-hidden="true"></div>
           <svg viewBox="0 0 640 500" role="img" aria-label="Walking route from Main Gate to Lecture Theatre 2">
             <path class="map-path map-path-muted" d="M40 420 C120 380 140 302 232 290 S356 350 430 264 S536 176 600 98"/>
             <path class="map-path map-path-route" d="M40 420 C120 380 140 302 232 290 S356 350 430 264 S536 176 600 98"/>
+            <path class="map-path map-path-energy" d="M40 420 C120 380 140 302 232 290 S356 350 430 264 S536 176 600 98"/>
             <circle cx="40" cy="420" r="11" class="map-node"/>
+            <circle cx="322" cy="310" r="9" class="map-node map-node-middle"/>
             <circle cx="600" cy="98" r="14" class="map-node map-node-end"/>
           </svg>
-          <span class="map-label map-label-gate">Main Gate</span>
-          <span class="map-label map-label-centre">Student Centre</span>
-          <span class="map-label map-label-lt">LT 2</span>
-          <div class="map-route-card">
+          <span class="map-walker" aria-hidden="true"><i></i></span>
+          <span class="map-touch-pulse" aria-hidden="true"></span>
+          <button class="map-label map-label-gate" type="button" data-map-stop data-route-title="Main Gate" data-route-detail="Starting point · route ready" aria-pressed="false">Main Gate</button>
+          <button class="map-label map-label-centre" type="button" data-map-stop data-route-title="Student Centre" data-route-detail="260 m · about 3 min away" aria-pressed="false">Student Centre</button>
+          <button class="map-label map-label-lt is-selected" type="button" data-map-stop data-route-title="Lecture Theatre 2" data-route-detail="520 m · mostly shaded" aria-pressed="true">LT 2</button>
+          <div class="map-route-card" data-map-route-card>
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 19-9-9 19-2-8z"/></svg>
-            <div><span>Walking route</span><strong>520 m · mostly shaded</strong></div>
+            <div><span data-map-route-title>Lecture Theatre 2</span><strong data-map-route-detail>520 m · mostly shaded</strong></div>
+            <button class="map-replay" type="button" data-map-replay aria-label="Replay the walking route">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0 2 5M20 4v7h-7"/></svg>
+            </button>
           </div>
         </div>
       </div>
@@ -225,14 +234,21 @@
           <span class="preview-label">Tutoring</span>
           <div class="tutor-avatar">AO</div>
           <h3>Find help for the course in front of you.</h3>
-          <div class="tutor-subjects"><span>MTH 211</span><span>PHY 201</span></div>
+          <div class="tutor-subjects" role="group" aria-label="Choose a course for the tutoring demo">
+            <button type="button" data-tutor-subject="MTH 211" aria-pressed="true">MTH 211</button>
+            <button type="button" data-tutor-subject="PHY 201" aria-pressed="false">PHY 201</button>
+          </div>
+          <div class="tutor-match-flow" aria-live="polite">
+            <span><i aria-hidden="true"></i><b data-tutor-status>Matching help for MTH 211</b></span>
+            <span><i aria-hidden="true"></i><b>Availability found</b></span>
+          </div>
           <p>Course context first. Profiles and availability second.</p>
         </article>
         <article class="rider-preview">
           <div class="rider-route-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="m6 17 4-8h4l4 8M9 12h7M14 9l-2-3"/></svg></div>
           <span class="preview-label">Campus riders</span>
           <h3>Delivery progress that speaks in landmarks.</h3>
-          <div class="rider-progress"><span></span><span></span><span></span></div>
+          <div class="rider-progress"><span></span><span></span><span></span><i class="rider-marker" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="m6 17 4-8h4l4 8M9 12h7M14 9l-2-3"/></svg></i></div>
           <div class="rider-stops"><small>Picked up</small><small>Faculty road</small><small>You</small></div>
           <p>Arriving near Engineering in 8–12 min</p>
         </article>
@@ -267,17 +283,19 @@
           <span><small>Coming soon on</small><strong>App Store</strong></span>
         </span>
       </div>
-      <div class="launch-devices" aria-label="KampusOne app previews">
-        <div class="launch-phone launch-phone-back">
+      <div class="launch-devices" aria-label="Interactive KampusOne app previews. Tap either phone to check availability.">
+        <button class="launch-phone launch-phone-back" type="button" data-launch-phone data-store="Google Play" aria-label="Open the Google Play app preview">
           <span class="launch-phone-label">Explore</span>
-          <div class="launch-map-mini"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <span class="launch-map-mini"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
           <strong>Everything around campus</strong>
-        </div>
-        <div class="launch-phone launch-phone-front">
-          <img src="/assets/brand/K1_symbol_terracotta.svg" alt="">
+          <span class="launch-coming-state" role="status" hidden><small>Google Play preview</small><strong>Coming soon</strong><span>We’re getting KampusOne ready.</span></span>
+        </button>
+        <button class="launch-phone launch-phone-front" type="button" data-launch-phone data-store="App Store" aria-label="Open the App Store app preview">
+          <img class="launch-phone-logo" src="/assets/brand/K1_symbol_terracotta.svg" alt="">
           <span class="launch-phone-label">KampusOne</span>
           <strong>One Campus.<br>One App.</strong>
-        </div>
+          <span class="launch-coming-state" role="status" hidden><small>App Store preview</small><strong>Coming soon</strong><span>We’re getting KampusOne ready.</span></span>
+        </button>
       </div>
     </section>
 
