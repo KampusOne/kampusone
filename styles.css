@@ -1460,8 +1460,7 @@ a {
   gap: 7px;
 }
 
-.feed-live > i,
-.feed-live-toast > i {
+.feed-live > i {
   display: block;
   width: 7px;
   height: 7px;
@@ -1469,6 +1468,15 @@ a {
   border-radius: 50%;
   background: var(--clay);
   box-shadow: 0 0 0 0 rgba(217, 133, 95, 0.36);
+}
+
+.feed-live-toast > i {
+  display: block;
+  width: 2px;
+  height: 20px;
+  flex: none;
+  border-radius: 1px;
+  background: var(--clay);
 }
 
 .feed-live-toast {
@@ -1480,7 +1488,7 @@ a {
   align-items: center;
   gap: 9px;
   border: 1px solid rgba(241, 223, 200, 0.16);
-  border-radius: 999px;
+  border-radius: 12px;
   background: rgba(38, 32, 29, 0.9);
   padding: 10px 13px;
   color: var(--sand);
@@ -1789,38 +1797,12 @@ a {
   to { transform: rotate(-360deg); }
 }
 
-.product-ribbon {
-  position: relative;
-}
-
-.product-ribbon::after {
-  position: absolute;
-  z-index: 3;
-  inset: 0;
-  width: 30%;
-  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  content: "";
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-180%) skewX(-8deg);
-}
-
-.campus-economy.is-motion-active .product-ribbon::after {
-  animation: marketplace-scan 7s ease-in-out 1s infinite;
-}
-
 .campus-economy.is-motion-active .product-tile {
   animation: product-tile-focus 9s ease-in-out infinite;
 }
 
 .campus-economy.is-motion-active .product-tile-two { animation-delay: -6s; }
 .campus-economy.is-motion-active .product-tile-three { animation-delay: -3s; }
-
-@keyframes marketplace-scan {
-  0%, 14%, 100% { opacity: 0; transform: translateX(-180%) skewX(-8deg); }
-  24% { opacity: 1; }
-  58%, 70% { opacity: 0; transform: translateX(410%) skewX(-8deg); }
-}
 
 @keyframes product-tile-focus {
   0%, 26%, 100% { filter: brightness(1) saturate(1); box-shadow: none; }
@@ -1992,26 +1974,6 @@ a {
   transition: opacity var(--motion-standard), transform var(--motion-standard) var(--ease-out);
 }
 
-.launch-phone::after {
-  position: absolute;
-  z-index: 2;
-  top: -18%;
-  bottom: -18%;
-  left: -70%;
-  width: 42%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
-  content: "";
-  opacity: 0;
-  pointer-events: none;
-  transform: skewX(-12deg);
-}
-
-.launch-teaser.is-motion-active .launch-phone::after {
-  animation: phone-screen-glint 8s ease-in-out infinite;
-}
-
-.launch-teaser.is-motion-active .launch-phone-front::after { animation-delay: -4s; }
-
 .launch-teaser.is-motion-active .launch-map-mini svg {
   animation: launch-pin-signal 3.4s ease-in-out infinite;
   transform-origin: center;
@@ -2042,17 +2004,8 @@ a {
 
 .launch-coming-state[hidden] { display: none; }
 
-.launch-coming-state::before {
-  width: 76px;
-  height: 76px;
-  border: 1px solid rgba(217, 133, 95, 0.5);
-  border-radius: 50%;
-  content: "";
-  opacity: 0.4;
-}
-
 .launch-coming-state small {
-  margin-top: 24px;
+  margin-top: 20px;
   color: var(--clay);
   font-size: 9px;
   font-weight: 800;
@@ -2087,14 +2040,16 @@ a {
   animation: coming-state-in var(--motion-large) var(--ease-out) both;
 }
 
-.launch-phone.is-coming .launch-coming-state::before {
-  animation: coming-state-ring 1.8s ease-out infinite;
+.launch-coming-logo,
+.launch-phone-front .launch-coming-logo {
+  display: block;
+  width: 68px;
+  margin: 0;
+  filter: drop-shadow(0 14px 24px rgba(195, 93, 56, 0.18));
 }
 
-@keyframes phone-screen-glint {
-  0%, 16%, 100% { left: -70%; opacity: 0; }
-  24% { opacity: 0.72; }
-  48%, 58% { left: 135%; opacity: 0; }
+.launch-phone.is-coming .launch-coming-logo {
+  animation: coming-logo-settle 1.8s ease-in-out infinite;
 }
 
 @keyframes launch-pin-signal {
@@ -2112,9 +2067,9 @@ a {
   to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes coming-state-ring {
-  0% { box-shadow: 0 0 0 0 rgba(217, 133, 95, 0.34); transform: scale(0.76); }
-  72%, 100% { box-shadow: 0 0 0 28px rgba(217, 133, 95, 0); transform: scale(1); }
+@keyframes coming-logo-settle {
+  0%, 100% { opacity: 0.82; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1.03); }
 }
 
 .about-origin.is-motion-active .about-campus-image {
@@ -2127,19 +2082,6 @@ a {
 
 .about-direction.is-motion-active .direction-list li:nth-child(2) { animation-delay: -8s; }
 .about-direction.is-motion-active .direction-list li:nth-child(3) { animation-delay: -4s; }
-
-.team-editorial.is-motion-active .team-photo-placeholder::after {
-  position: absolute;
-  inset: -20% auto -20% -55%;
-  width: 34%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34), transparent);
-  content: "";
-  transform: skewX(-10deg);
-  animation: placeholder-light 9s ease-in-out infinite;
-}
-
-.team-editorial.is-motion-active .team-member:nth-child(2) .team-photo-placeholder::after { animation-delay: -6s; }
-.team-editorial.is-motion-active .team-member:nth-child(3) .team-photo-placeholder::after { animation-delay: -3s; }
 
 .team-editorial.is-motion-active .team-photo-placeholder img {
   animation: team-mark-breathe 6s ease-in-out infinite;
@@ -2157,12 +2099,6 @@ a {
 @keyframes editorial-row-focus {
   0%, 22%, 100% { background: transparent; padding-inline: 0; }
   7%, 15% { background: rgba(195, 93, 56, 0.05); padding-inline: 14px; }
-}
-
-@keyframes placeholder-light {
-  0%, 18%, 100% { left: -55%; opacity: 0; }
-  28% { opacity: 1; }
-  56%, 68% { left: 125%; opacity: 0; }
 }
 
 @keyframes team-mark-breathe {
@@ -2239,10 +2175,7 @@ body.is-page-hidden * {
   .map-path-energy,
   .map-walker,
   .map-touch-pulse,
-  .product-ribbon::after,
-  .rider-marker,
-  .launch-phone::after,
-  .team-photo-placeholder::after {
+  .rider-marker {
     display: none !important;
   }
 
@@ -2260,7 +2193,8 @@ body.is-page-hidden * {
   .team-photo-placeholder img,
   .featured-story-art img,
   .launch-map-mini svg,
-  .launch-phone-logo {
+  .launch-phone-logo,
+  .launch-coming-logo {
     animation: none !important;
   }
 }
