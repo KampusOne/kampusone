@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 340" width="1200"><defs><linearGradient id="brandgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A8462E"/><stop offset="0.55" stop-color="#C35D38"/><stop offset="1" stop-color="#E9B18E"/></linearGradient></defs>
+    <g transform="translate(20,20) scale(1.85)" fill="#C35D38">
+<path d="M38 22Q38 16 44 16H76Q82 16 82 22V47Q82 52 78 57L62 73Q58 77 62 82L104 132Q109 139 101 139H44Q38 139 38 133Z"/>
+<path d="M125 18Q129 14 135 14H150Q156 14 156 20V135Q156 141 150 141H134Q128 141 128 135V75Q128 69 123 74L111 84Q105 89 99 84Q94 79 99 74Z"/>
+</g>
+    <text x="430" y="182" font-family="Lato,Inter,Arial,sans-serif" font-size="128" font-weight="400" letter-spacing="-5" fill="#C35D38">KampusOne</text>
+    <text x="435" y="245" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="400" letter-spacing="1.8" fill="#9A8D84">Already Ready for School</text>
+    </svg>

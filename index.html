@@ -1,265 +1,313 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#FBF7F2" />
-  <meta name="description" content="KampusOne puts the tools students need for university life in one trusted, personalised app." />
-  <meta property="og:title" content="KampusOne — Already Ready for School" />
-  <meta property="og:description" content="Timetable, campus information, CGPA tools, events, tutors, documents and trusted campus services — all in one place." />
-  <title>KampusOne — Already Ready for School</title>
-  <link rel="icon" href="assets/k1-icon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#A8462E">
+  <meta name="description" content="KampusOne connects campus news, classes, routes, services and student life in one calm, useful experience.">
+  <meta property="og:title" content="KampusOne — One Campus, One App.">
+  <meta property="og:description" content="Everything campus. Connected.">
+  <meta property="og:image" content="/assets/images/campus-social.jpg">
+  <title>KampusOne — Everything Campus. Connected.</title>
+  <link rel="icon" href="/assets/brand/K1_symbol_gradient.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js" defer></script>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="KampusOne home">
-        <img src="assets/kampusone-logo.svg" alt="KampusOne — Already Ready for School" />
-      </a>
-
-      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#product">Product</a>
-        <a href="#why">Why KampusOne</a>
-        <a href="#story">Our story</a>
-        <a href="#team">Team</a>
-      </nav>
-
-      <a class="nav-cta" href="#download">Get the app</a>
-    </div>
-
-    <nav class="mobile-nav" aria-label="Mobile navigation">
-      <a href="#product">Product</a>
-      <a href="#why">Why KampusOne</a>
-      <a href="#story">Our story</a>
-      <a href="#team">Team</a>
-      <a href="#download">Get the app</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero section-pad">
-      <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <div class="eyebrow"><span></span> Built for university life</div>
-          <h1>Everything students need, <em>already ready.</em></h1>
-          <p class="hero-lead">KampusOne brings your timetable, campus information, academic tools, events, tutors, documents and trusted student services into one personalised app.</p>
-
-          <div class="store-row" aria-label="App download links">
-            <a class="store-button" href="#download" data-store="apple">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.33.07 2.26.73 3.04.78 1.17-.24 2.29-.93 3.54-.84 1.5.12 2.63.71 3.38 1.8-3.09 1.85-2.36 5.92.48 7.06-.57 1.5-1.31 2.99-2.44 4.17ZM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>
-              <span><small>Download on the</small>App Store</span>
-            </a>
-            <a class="store-button" href="#download" data-store="play">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.61 1.81 13.47 12l-9.86 10.19a2.4 2.4 0 0 1-.61-1.61V3.42c0-.61.22-1.17.61-1.61Zm11.2 11.58 2.76 2.86-10.5 6.02 7.74-8.88Zm4.12-4.28 3.02 1.73c1.4.8 1.4 1.52 0 2.32l-3.03 1.74-2.94-3.05 2.95-2.74ZM7.07 1.73l10.51 6.03-2.77 2.85-7.74-8.88Z"/></svg>
-              <span><small>GET IT ON</small>Google Play</span>
-            </a>
-          </div>
-
-          <div class="hero-note">
-            <div class="avatar-stack" aria-hidden="true"><span>G</span><span>K1</span><span>+</span></div>
-            <p>Starting at the University of Benin.<br><strong>Built with students, for students.</strong></p>
-          </div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main id="main-content">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <div class="progressive-media hero-campus-frame" data-progressive>
+          <span class="progressive-skeleton"></span>
+          <img class="hero-campus" src="/assets/images/campus-hero.webp" alt="" fetchpriority="high" decoding="async">
         </div>
+        <div class="hero-sky-wash"></div>
+        <div class="hero-brand-wash"></div>
+        <div class="hero-grain"></div>
+      </div>
 
-        <div class="hero-visual reveal" aria-label="KampusOne mobile app preview">
-          <div class="floating-pill pill-one"><span class="pulse-dot"></span> Next class in 20 mins</div>
-          <div class="floating-pill pill-two">3.72 <small>CGPA</small></div>
-          <div class="phone phone-back">
-            <div class="phone-screen feed-screen">
-              <div class="status-bar"><span>9:41</span><span>● ● ●</span></div>
-              <div class="screen-top"><div><small>Campus feed</small><h3>What’s happening</h3></div><b>◉</b></div>
-              <div class="feed-card orange"><small>ACADEMICS</small><h4>Course registration closes Friday</h4><p>Computer Engineering · 2h ago</p></div>
-              <div class="feed-card cream"><small>EVENTS</small><h4>Engineering students’ mixer</h4><p>Hall 2 Car Park · Tomorrow</p></div>
-              <div class="feed-card dark"><small>OPPORTUNITY</small><h4>Student developer internship</h4><p>Verified listing</p></div>
+      <header class="site-header site-header-home">
+        <a class="brand-link" href="/" aria-label="KampusOne home">
+          <img src="/assets/brand/KampusOne_horizontal_white.svg" alt="KampusOne">
+        </a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a class="is-active" href="/" aria-current="page">Home</a>
+          <a href="/about/">About</a>
+          <a href="/#experience">Features</a>
+          <a href="/blog/">Blog</a>
+          <a href="/team/">Team</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+        <a class="coming-action" href="#launch">Coming Soon</a>
+        <button class="mobile-menu-trigger" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-open>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </header>
+
+      <div class="hero-copy">
+        <p class="hero-script">One Campus, <span>One App.</span></p>
+        <h1 id="hero-title">Everything Campus.<span>Connected.</span></h1>
+        <p class="hero-support">KampusOne brings what students need into one calm, useful and reliable campus experience.</p>
+        <a class="hero-cta" href="#launch">Get Early Access</a>
+      </div>
+
+      <div class="hero-card hero-card-left">
+        <article class="tilt-card" data-tilt>
+          <span class="hero-card-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v17H5.5A2.5 2.5 0 0 0 3 22zM21 5.5A2.5 2.5 0 0 0 18.5 3H13v17h5.5A2.5 2.5 0 0 1 21 22z"/></svg>
+          </span>
+          <h2>Your Campus,<br>Simplified</h2>
+          <p>News, classes, events, resources, routes and more — all in one place.</p>
+        </article>
+      </div>
+
+      <div class="hero-card hero-card-right">
+        <article class="tilt-card" data-tilt data-tilt-reverse>
+          <span class="hero-card-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h2>Built for Students,<br>By Students</h2>
+          <p>A community-driven platform that understands you and your campus life.</p>
+        </article>
+      </div>
+
+      <img class="hero-students" src="/assets/images/hero-students.webp" alt="Three university students talking together" fetchpriority="high" decoding="async">
+      <div class="hero-bottom-rule" aria-hidden="true"></div>
+    </section>
+
+    <section class="story-section section-shell reveal-section" id="about">
+      <div class="story-copy">
+        <p class="section-kicker">What is KampusOne?</p>
+        <h2>Campus life has too many tabs open.</h2>
+        <p class="story-lead">Important updates live in group chats. Class changes arrive late. Finding a rider, tutor, route or course detail means asking around. KampusOne connects those moments into one student-first system.</p>
+        <div class="story-principle">
+          <span>One useful layer</span>
+          <p>between every student and the campus around them.</p>
+        </div>
+      </div>
+
+      <div class="product-stage" aria-label="KampusOne mobile product preview">
+        <div class="stage-note stage-note-top">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>Faculty of Engineering · 6 min walk</span>
+        </div>
+        <div class="phone-shell">
+          <div class="phone-island"></div>
+          <div class="phone-status"><span>9:41</span><span>Campus online</span></div>
+          <div class="phone-greeting"><span>Good morning</span><strong>What’s happening today?</strong></div>
+          <div class="phone-quick-grid">
+            <div>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+              <span>Next class</span><strong>COE 211</strong>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>Campus map</span><strong>Find a place</strong>
             </div>
           </div>
-          <div class="phone phone-front">
-            <div class="phone-screen home-screen">
-              <div class="status-bar"><span>9:41</span><span>● ● ●</span></div>
-              <div class="screen-top"><div><small>Good morning,</small><h3>Gideon</h3></div><div class="mini-avatar">G</div></div>
-              <div class="next-class">
-                <div><small>NEXT CLASS</small><h4>CPE 112 — Lab</h4><p>Engineering Block · 10:00 AM</p></div>
-                <div class="time-badge">20<span>min</span></div>
-              </div>
-              <div class="metric-grid">
-                <div><span>3.72</span><small>CGPA</small></div>
-                <div><span>12</span><small>Saved PDFs</small></div>
-                <div><span>5</span><small>Campus alerts</small></div>
-              </div>
-              <div class="section-label"><b>Quick actions</b><span>View all</span></div>
-              <div class="quick-grid">
-                <div><i>▦</i><span>Timetable</span></div><div><i>⌖</i><span>Campus</span></div>
-                <div><i>ƒ</i><span>CGPA</span></div><div><i>✦</i><span>Study AI</span></div>
-              </div>
-              <div class="today-card"><div class="today-icon">✓</div><div><small>YOU’RE ON TRACK</small><h4>Already ready for school?</h4></div></div>
-              <div class="bottom-nav"><span>⌂<small>Home</small></span><span>◫<small>Feed</small></span><span>⌖<small>Campus</small></span><span>○<small>Profile</small></span></div>
-            </div>
+          <div class="phone-update">
+            <span class="phone-label">DEPARTMENT UPDATE</span>
+            <strong>Lecture venue changed</strong>
+            <p>COE 211 now holds at Lecture Theatre 2 by 10:00.</p>
+          </div>
+          <div class="phone-nav" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="stage-note stage-note-bottom">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+          <span>Class reminder · in 28 minutes</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-section" id="experience">
+      <div class="signal-shell section-shell">
+        <div class="signal-copy">
+          <p class="section-kicker section-kicker-light">Campus signal</p>
+          <h2>Know what matters before it becomes old news.</h2>
+          <p>Follow university, faculty and department updates in one feed. The information closest to you stays easiest to find.</p>
+          <ul class="signal-list" aria-label="News experience highlights">
+            <li><span>01</span>Department-aware updates</li>
+            <li><span>02</span>Clear event and class context</li>
+            <li><span>03</span>Useful notices without group-chat noise</li>
+          </ul>
+        </div>
+        <div class="feed-stage" aria-label="Campus news feed preview">
+          <div class="feed-topline"><span>Your campus</span><span>Today</span></div>
+          <article class="feed-card feed-card-featured">
+            <span>ACADEMIC</span><h3>Course registration guide</h3>
+            <p>A clear checklist for what to confirm before submission.</p><small>For your department</small>
+          </article>
+          <article class="feed-card"><span>EVENT</span><h3>Engineering career session</h3><small>Tomorrow · Main auditorium</small></article>
+          <article class="feed-card feed-card-compact"><span>NOTICE</span><h3>Library hours updated</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule-story section-shell reveal-section">
+      <div class="schedule-visual" aria-label="Smart timetable preview">
+        <div class="schedule-head">
+          <div><span>Monday · Week 6</span><strong>Your day</strong></div>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+        </div>
+        <div class="schedule-grid">
+          <span class="schedule-time time-one">08:00</span>
+          <span class="schedule-time time-two">10:00</span>
+          <span class="schedule-time time-three">13:00</span>
+          <article class="class-block class-block-one"><small>COE 211</small><strong>Computer Architecture</strong><span>LT 2 · 08:00–10:00</span></article>
+          <article class="class-block class-block-two"><small>MTH 211</small><strong>Engineering Mathematics</strong><span>Main Auditorium · 10:00–12:00</span></article>
+          <article class="class-block class-block-three"><small>PLAN</small><strong>Study window</strong><span>Library · 13:00</span></article>
+        </div>
+        <div class="schedule-reminder">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><span>LEAVE IN 12 MINUTES</span><strong>LT 2 is a 6-minute walk</strong></div>
+        </div>
+      </div>
+      <div class="schedule-copy">
+        <p class="section-kicker">Smart timetable</p>
+        <h2>A schedule that understands the day around the class.</h2>
+        <p>Turn course information into a structured plan, attach the right venue and receive reminders with enough time to move.</p>
+        <dl class="feature-ledger">
+          <div><dt>Class awareness</dt><dd>Time, venue and relevant changes stay together.</dd></div>
+          <div><dt>Student planning</dt><dd>See useful study windows instead of a wall of blocks.</dd></div>
+          <div><dt>Quiet reminders</dt><dd>Timely context without turning the day into alerts.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="movement-story reveal-section">
+      <div class="movement-inner section-shell">
+        <div class="movement-copy">
+          <p class="section-kicker">Campus navigation</p>
+          <h2>Find the place. Understand the route.</h2>
+          <p>Search the campus language students actually use — gates, faculties, lecture theatres and familiar landmarks — then follow a clear walking route.</p>
+          <div class="movement-search">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <span>Lecture Theatre 2</span><small>6 min</small>
+          </div>
+        </div>
+        <div class="campus-map" aria-label="Illustrated campus walking route">
+          <div class="map-grid" aria-hidden="true"></div>
+          <svg viewBox="0 0 640 500" role="img" aria-label="Walking route from Main Gate to Lecture Theatre 2">
+            <path class="map-path map-path-muted" d="M40 420 C120 380 140 302 232 290 S356 350 430 264 S536 176 600 98"/>
+            <path class="map-path map-path-route" d="M40 420 C120 380 140 302 232 290 S356 350 430 264 S536 176 600 98"/>
+            <circle cx="40" cy="420" r="11" class="map-node"/>
+            <circle cx="600" cy="98" r="14" class="map-node map-node-end"/>
+          </svg>
+          <span class="map-label map-label-gate">Main Gate</span>
+          <span class="map-label map-label-centre">Student Centre</span>
+          <span class="map-label map-label-lt">LT 2</span>
+          <div class="map-route-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 19-9-9 19-2-8z"/></svg>
+            <div><span>Walking route</span><strong>520 m · mostly shaded</strong></div>
           </div>
         </div>
       </div>
-      <div class="container hero-strip reveal">
-        <span>Timetable</span><i>•</i><span>Campus maps</span><i>•</i><span>CGPA</span><i>•</i><span>Events</span><i>•</i><span>Tutors</span><i>•</i><span>PDFs</span><i>•</i><span>Student services</span>
-      </div>
     </section>
 
-    <section class="product section-pad" id="product">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><span class="section-kicker">ONE STUDENT APP</span><h2>Your whole campus day,<br>in one calm place.</h2></div>
-          <p>University life is already demanding. KampusOne removes the extra work of searching through group chats, scattered PDFs, noticeboards and different apps just to know what comes next.</p>
-        </div>
-
-        <div class="feature-bento">
-          <article class="feature-card feature-large terracotta reveal">
-            <div class="feature-number">01</div>
-            <div class="feature-content"><span>PLAN</span><h3>Know your day before it begins.</h3><p>Build your timetable, receive class and deadline reminders, and keep your academic week organised.</p></div>
-            <div class="mini-ui timetable-ui">
-              <div class="mini-ui-head"><b>Today</b><span>Thursday, 30 July</span></div>
-              <div class="class-row active"><time>10:00</time><div><b>CPE 112</b><small>Engineering Block</small></div><span>Lab</span></div>
-              <div class="class-row"><time>1:00</time><div><b>MTH 102</b><small>Lecture Theatre</small></div><span>Class</span></div>
-              <div class="class-row"><time>4:00</time><div><b>Study block</b><small>Personal reminder</small></div><span>Focus</span></div>
-            </div>
-          </article>
-
-          <article class="feature-card cream reveal">
-            <div class="feature-number">02</div>
-            <div class="feature-content"><span>UNDERSTAND</span><h3>Your campus, explained.</h3><p>Find buildings, departments, contacts, rules and verified information without asking five different people.</p></div>
-            <div class="map-art" aria-hidden="true"><span class="road r1"></span><span class="road r2"></span><span class="road r3"></span><i class="pin p1">K1</i><i class="pin p2"></i><i class="pin p3"></i></div>
-          </article>
-
-          <article class="feature-card ink reveal">
-            <div class="feature-number">03</div>
-            <div class="feature-content"><span>PROGRESS</span><h3>See how your results add up.</h3><p>Calculate GPA and CGPA, simulate future results and understand the path to your academic goal.</p></div>
-            <div class="grade-ring"><div><strong>3.72</strong><span>Current CGPA</span></div></div>
-          </article>
-
-          <article class="feature-card sand reveal">
-            <div class="feature-number">04</div>
-            <div class="feature-content"><span>CONNECT</span><h3>Trusted people and services.</h3><p>Discover verified tutors, student vendors, opportunities and campus services with clearer identity and reviews.</p></div>
-            <div class="people-list"><div><span>AO</span><p><b>Ada Osas</b><small>Verified mathematics tutor</small></p><i>4.9</i></div><div><span>KM</span><p><b>K1 Merch</b><small>Verified campus vendor</small></p><i>4.8</i></div></div>
-          </article>
-
-          <article class="feature-card feature-wide peach reveal">
-            <div class="feature-number">05</div>
-            <div class="feature-content"><span>STAY INFORMED</span><h3>News that actually belongs to your campus.</h3><p>Receive useful, targeted updates for your university, faculty, department and level — with sources, dates and corrections.</p></div>
-            <div class="news-ticker"><div><b>Just in</b><span>Engineering faculty timetable update</span><time>4m</time></div><div><b>Opportunity</b><span>Applications open for student founders</span><time>1h</time></div><div><b>Campus</b><span>New library opening hours published</span><time>3h</time></div></div>
-          </article>
-        </div>
+    <section class="campus-economy section-shell reveal-section">
+      <div class="economy-heading">
+        <p class="section-kicker">Campus economy</p>
+        <h2>Useful people and services, within campus reach.</h2>
+        <p>Marketplace listings, academic help and delivery are different experiences. Each gets the context it needs instead of one repeated card.</p>
       </div>
-    </section>
-
-    <section class="why section-pad" id="why">
-      <div class="container why-grid">
-        <div class="sticky-copy reveal">
-          <span class="section-kicker light">WHY KAMPUSONE</span>
-          <h2>School is complex.<br>Your app shouldn’t be.</h2>
-          <p>KampusOne is designed around the reality of African university life: limited time, scattered information, low-trust transactions and the need to make every megabyte count.</p>
-          <a class="text-link" href="#download">See the app <span>↗</span></a>
-        </div>
-        <div class="principle-list">
-          <article class="reveal"><span>01</span><div><h3>Useful every day</h3><p>Students should return for classes, deadlines, news and progress — not only when they need to buy something.</p></div></article>
-          <article class="reveal"><span>02</span><div><h3>Trust is a feature</h3><p>Verified information, visible reviews and clear support processes are designed into the experience.</p></div></article>
-          <article class="reveal"><span>03</span><div><h3>Essential tools stay accessible</h3><p>Core academic and campus utilities are built to remain free and useful to the widest range of students.</p></div></article>
-          <article class="reveal"><span>04</span><div><h3>Local insight, global quality</h3><p>Made around real Nigerian campus needs, with the ambition and standards to serve universities across Africa.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="story section-pad" id="story">
-      <div class="container story-grid">
-        <div class="story-art reveal" aria-hidden="true">
-          <div class="poster poster-a"><img src="assets/k1-icon.svg" alt=""><span>FROM CAMPUS<br>TO THE WORLD.</span></div>
-          <div class="poster poster-b"><b>YOU READY<br>FOR SCHOOL?</b><strong>Already.</strong><small>K1</small></div>
-          <div class="poster poster-c"><small>K1 CREW</small><b>Built where<br>the problem lives.</b></div>
-        </div>
-        <div class="story-copy reveal">
-          <span class="section-kicker">OUR STORY</span>
-          <h2>It started with a simple frustration.</h2>
-          <p class="lead-quote">Why should a student need five group chats, three websites and word of mouth just to navigate one school day?</p>
-          <p>KampusOne began as a student-built answer to the everyday confusion around university life: missing information, forgotten deadlines, hard-to-find locations, scattered materials and campus services that are difficult to trust.</p>
-          <p>What started as an idea at the University of Benin grew into a bigger mission — to create a dependable digital layer for university communities across Africa.</p>
-          <div class="story-signature"><span>Gideon</span><small>Founder, KampusOne</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mission section-pad">
-      <div class="container mission-wrap reveal">
-        <p>OUR MISSION</p>
-        <h2>Make university life easier to navigate, safer to transact within and more connected to opportunity.</h2>
-        <div class="mission-meta"><span>Starting at UNIBEN</span><span>Built for Africa</span><span>Designed for daily use</span></div>
-      </div>
-    </section>
-
-    <section class="team section-pad" id="team">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><span class="section-kicker">THE PEOPLE BEHIND K1</span><h2>Built by students who<br>understand the problem.</h2></div>
-          <p>KampusOne is being shaped by a growing student-led team, contributors and campus collaborators who believe university life can be simpler, more organised and more connected.</p>
-        </div>
-        <div class="team-grid">
-          <article class="founder-card reveal">
-            <div class="founder-visual"><div class="founder-initials">G</div><span class="founder-tag">FOUNDER</span></div>
-            <div><h3>Igiehon Aisosa Gideon</h3><p>Founder & Product Builder</p><small>Product vision, experience design and engineering.</small></div>
-          </article>
-          <article class="team-card reveal"><div class="team-icon">✦</div><h3>K1 Product Crew</h3><p>Designing the student experience around actual campus routines, pressures and opportunities.</p></article>
-          <article class="team-card reveal"><div class="team-icon">↗</div><h3>Campus Contributors</h3><p>Students, class representatives and early collaborators helping KampusOne stay accurate and useful.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="download section-pad" id="download">
-      <div class="container download-card reveal">
-        <div class="download-copy">
-          <img class="download-logo" src="assets/k1-icon.svg" alt="KampusOne app icon" />
-          <span class="section-kicker light">ALREADY READY FOR SCHOOL</span>
-          <h2>Your campus life.<br>One app.</h2>
-          <p>Be among the first students to experience a more organised, informed and connected university life.</p>
-          <div class="store-row">
-            <button class="store-button store-trigger" type="button" data-store="apple">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.33.07 2.26.73 3.04.78 1.17-.24 2.29-.93 3.54-.84 1.5.12 2.63.71 3.38 1.8-3.09 1.85-2.36 5.92.48 7.06-.57 1.5-1.31 2.99-2.44 4.17ZM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>
-              <span><small>Download on the</small>App Store</span>
-            </button>
-            <button class="store-button store-trigger" type="button" data-store="play">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.61 1.81 13.47 12l-9.86 10.19a2.4 2.4 0 0 1-.61-1.61V3.42c0-.61.22-1.17.61-1.61Zm11.2 11.58 2.76 2.86-10.5 6.02 7.74-8.88Zm4.12-4.28 3.02 1.73c1.4.8 1.4 1.52 0 2.32l-3.03 1.74-2.94-3.05 2.95-2.74ZM7.07 1.73l10.51 6.03-2.77 2.85-7.74-8.88Z"/></svg>
-              <span><small>GET IT ON</small>Google Play</span>
-            </button>
+      <div class="economy-layout">
+        <article class="marketplace-preview">
+          <div class="preview-topline"><span>Marketplace</span><small>Near your campus</small></div>
+          <div class="product-ribbon">
+            <div class="product-tile product-tile-one"><span>Textbooks</span><strong>Course materials</strong></div>
+            <div class="product-tile product-tile-two"><span>Devices</span><strong>Student tech</strong></div>
+            <div class="product-tile product-tile-three"><span>Essentials</span><strong>Everyday campus</strong></div>
           </div>
+          <p>Browse by what is practical around your campus, not an endless catalogue.</p>
+        </article>
+        <article class="tutor-preview">
+          <span class="preview-label">Tutoring</span>
+          <div class="tutor-avatar">AO</div>
+          <h3>Find help for the course in front of you.</h3>
+          <div class="tutor-subjects"><span>MTH 211</span><span>PHY 201</span></div>
+          <p>Course context first. Profiles and availability second.</p>
+        </article>
+        <article class="rider-preview">
+          <div class="rider-route-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="m6 17 4-8h4l4 8M9 12h7M14 9l-2-3"/></svg></div>
+          <span class="preview-label">Campus riders</span>
+          <h3>Delivery progress that speaks in landmarks.</h3>
+          <div class="rider-progress"><span></span><span></span><span></span></div>
+          <div class="rider-stops"><small>Picked up</small><small>Faculty road</small><small>You</small></div>
+          <p>Arriving near Engineering in 8–12 min</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="department-story section-shell reveal-section">
+      <div class="department-copy">
+        <p class="section-kicker">Your department</p>
+        <h2>Campus-wide when you need it. Specific when it matters.</h2>
+        <p>Courses, notices, resources and relevant people can be organized around the student’s actual programme and level.</p>
+      </div>
+      <div class="department-board">
+        <div class="department-board-head"><span>Computer Engineering</span><small>200 level · First semester</small></div>
+        <div class="department-row"><span>Courses</span><strong>Current semester plan</strong><small>Organized</small></div>
+        <div class="department-row"><span>Notices</span><strong>Department updates</strong><small>Relevant</small></div>
+        <div class="department-row"><span>Resources</span><strong>Shared academic material</strong><small>Findable</small></div>
+        <div class="department-row"><span>Discovery</span><strong>People, places and help</strong><small>Local</small></div>
+      </div>
+    </section>
+
+    <section class="launch-teaser section-shell reveal-section" id="launch">
+      <div><p class="section-kicker">Coming soon</p><h2>The campus in your pocket.</h2></div>
+      <p>KampusOne is being shaped for real student life. App availability details will be shared here as launch gets closer.</p>
+      <div class="store-row" aria-label="Future app availability">
+        <span>Google Play · Coming soon</span><span>App Store · Coming soon</span>
+      </div>
+      <div class="launch-devices" aria-label="KampusOne app previews">
+        <div class="launch-phone launch-phone-back">
+          <span class="launch-phone-label">Explore</span>
+          <div class="launch-map-mini"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <strong>Everything around campus</strong>
         </div>
-        <div class="download-art" aria-hidden="true">
-          <div class="download-ring ring-a"></div><div class="download-ring ring-b"></div>
-          <div class="download-phone"><div class="download-screen"><img src="assets/k1-icon.svg" alt=""><h4>KampusOne</h4><p>Already Ready for School</p><div class="loading-line"><span></span></div></div></div>
+        <div class="launch-phone launch-phone-front">
+          <img src="/assets/brand/K1_symbol_terracotta.svg" alt="">
+          <span class="launch-phone-label">KampusOne</span>
+          <strong>One Campus.<br>One App.</strong>
         </div>
       </div>
     </section>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-card">
+        <div class="footer-intro">
+          <img src="/assets/brand/KampusOne_horizontal_white.svg" alt="KampusOne">
+          <h2>One campus.<br>One connected student life.</h2>
+          <p>News, classes, routes, people and everyday campus services — made easier to find and use.</p>
+          <a class="footer-early-link" href="#launch">Get Early Access</a>
+        </div>
+        <div class="footer-links">
+          <div><h3>Explore</h3><a href="/">Home</a><a href="/about/">About</a><a href="/#experience">Features</a></div>
+          <div><h3>Company</h3><a href="/team/">Team</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+          <div><h3>Availability</h3><span>Google Play · Soon</span><span>App Store · Soon</span><span>Social links · Pending</span></div>
+        </div>
+        <div class="footer-bottom"><span>© <span data-current-year>2026</span> KampusOne</span><span>Built around students, not dashboards.</span></div>
+      </div>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-top">
-      <a class="footer-brand" href="#top"><img src="assets/kampusone-logo.svg" alt="KampusOne"></a>
-      <div class="footer-links"><div><b>Explore</b><a href="#product">Product</a><a href="#why">Why KampusOne</a><a href="#story">Our story</a></div><div><b>Company</b><a href="#team">Team</a><a href="mailto:hello@kampusone.app">Contact</a><a href="#">Privacy</a></div><div><b>Follow</b><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">X / Twitter</a></div></div>
+  <div class="mobile-nav-shell" aria-hidden="true" data-menu-shell>
+    <div class="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <div class="mobile-menu-header">
+        <img src="/assets/brand/KampusOne_horizontal_ink.svg" alt="KampusOne">
+        <button class="menu-close" type="button" aria-label="Close navigation" data-menu-close>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+        <p class="mobile-menu-title">Explore KampusOne</p>
+        <p class="mobile-menu-description">One connected view of campus life.</p>
+      </div>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="/"><span>01</span>Home</a><a href="/about/"><span>02</span>About</a><a href="/#experience"><span>03</span>Features</a>
+        <a href="/blog/"><span>04</span>Blog</a><a href="/team/"><span>05</span>Team</a><a href="/contact/"><span>06</span>Contact</a>
+      </nav>
+      <div class="mobile-menu-foot"><span>Made for the rhythm of student life.</span></div>
     </div>
-    <div class="container footer-bottom"><p>© 2026 KampusOne. All rights reserved.</p><p>Independent student platform. Not an official university portal unless formally stated.</p></div>
-  </footer>
-
-  <dialog class="launch-dialog" aria-labelledby="launch-title">
-    <button class="dialog-close" aria-label="Close">×</button>
-    <img src="assets/k1-icon.svg" alt="KampusOne icon">
-    <span>COMING SOON</span>
-    <h3 id="launch-title">KampusOne is preparing for launch.</h3>
-    <p>The store buttons are ready for the official Apple App Store and Google Play links when the app is published.</p>
-    <button class="dialog-primary">Got it</button>
-  </dialog>
-
-  <script src="script.js"></script>
+  </div>
 </body>
 </html>
