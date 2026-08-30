@@ -1,7 +1,66 @@
 (() => {
   "use strict";
 
+  document.documentElement.classList.add("js");
+
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  window.requestAnimationFrame(() => {
+    document.body.classList.add("is-ready");
+  });
+
+  const progressTrack = document.createElement("div");
+  const progressValue = document.createElement("span");
+  progressTrack.className = "scroll-progress";
+  progressTrack.setAttribute("aria-hidden", "true");
+  progressTrack.append(progressValue);
+  document.body.prepend(progressTrack);
+
+  const heroCampus = document.querySelector(".hero-campus");
+  const heroStudents = document.querySelector(".hero-students");
+  const productStage = document.querySelector(".product-stage");
+  const launchDevices = document.querySelector(".launch-devices");
+  let scrollFrame = 0;
+
+  function clamp(value, minimum, maximum) {
+    return Math.min(Math.max(value, minimum), maximum);
+  }
+
+  function updateScrollMotion() {
+    scrollFrame = 0;
+    const scrollRange = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    const progress = clamp(window.scrollY / scrollRange, 0, 1);
+    progressTrack.style.setProperty("--scroll-progress", String(progress));
+
+    if (reducedMotion.matches) return;
+
+    if (heroCampus || heroStudents) {
+      const heroProgress = clamp(window.scrollY / Math.max(window.innerHeight, 1), 0, 1);
+      heroCampus?.style.setProperty("--campus-shift", `${(heroProgress * 16).toFixed(1)}px`);
+      heroStudents?.style.setProperty("--student-shift", `${(heroProgress * -12).toFixed(1)}px`);
+    }
+
+    if (productStage) {
+      const rect = productStage.getBoundingClientRect();
+      const stageProgress = clamp((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0, 1);
+      productStage.style.setProperty("--depth-y", `${((stageProgress - 0.5) * -16).toFixed(1)}px`);
+    }
+
+    if (launchDevices) {
+      const rect = launchDevices.getBoundingClientRect();
+      const launchProgress = clamp((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0, 1);
+      launchDevices.style.setProperty("--launch-shift", `${((launchProgress - 0.5) * -20).toFixed(1)}px`);
+    }
+  }
+
+  function requestScrollMotion() {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(updateScrollMotion);
+  }
+
+  updateScrollMotion();
+  window.addEventListener("scroll", requestScrollMotion, { passive: true });
+  window.addEventListener("resize", requestScrollMotion);
 
   document.querySelectorAll("[data-current-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());
@@ -80,6 +139,10 @@
     }
   });
 
+  document.querySelectorAll(".site-footer, .article-body section").forEach((node) => {
+    node.classList.add("reveal-section");
+  });
+
   const revealNodes = document.querySelectorAll(".reveal-section");
   if (reducedMotion.matches || !("IntersectionObserver" in window)) {
     revealNodes.forEach((node) => node.classList.add("is-visible"));
@@ -116,6 +179,24 @@
         card.style.setProperty("--tilt-y", "0deg");
         card.style.setProperty("--shine-x", "50%");
         card.style.setProperty("--shine-y", "50%");
+      });
+    });
+
+    document.querySelectorAll(".product-stage").forEach((scene) => {
+      scene.addEventListener("pointermove", (event) => {
+        const rect = scene.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        scene.style.setProperty("--scene-x", `${(x * 12).toFixed(1)}px`);
+        scene.style.setProperty("--scene-y", `${(y * 12).toFixed(1)}px`);
+        scene.style.setProperty("--scene-x-inverse", `${(x * -8).toFixed(1)}px`);
+        scene.style.setProperty("--scene-y-inverse", `${(y * -8).toFixed(1)}px`);
+      });
+      scene.addEventListener("pointerleave", () => {
+        scene.style.setProperty("--scene-x", "0px");
+        scene.style.setProperty("--scene-y", "0px");
+        scene.style.setProperty("--scene-x-inverse", "0px");
+        scene.style.setProperty("--scene-y-inverse", "0px");
       });
     });
   }
