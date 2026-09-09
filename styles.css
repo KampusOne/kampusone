@@ -3287,8 +3287,8 @@ body.is-page-hidden * {
 }
 
 .team-member:nth-child(even) {
-  width: 82%;
-  margin-left: auto;
+  width: 100%;
+  margin-left: 0;
 }
 
 .team-photo {
