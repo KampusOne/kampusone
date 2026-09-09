@@ -6,7 +6,7 @@ The public, pre-launch website for KampusOne.
 
 - `/` — landing page and product story
 - `/about/` — origin, philosophy and mission
-- `/team/` — editorial team framework with photography-ready placeholders
+- `/team/` — responsive team profiles and search-friendly member metadata
 - `/blog/` — field notes index
 - `/blog/campus-life-should-feel-connected/` — article detail template
 - `/contact/` — enquiry form with validation and delivery-state handling

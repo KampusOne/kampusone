@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://kampusone.app/</loc>
+    <lastmod>2026-09-09</lastmod>
+  </url>
+  <url>
+    <loc>https://kampusone.app/about/</loc>
+    <lastmod>2026-09-09</lastmod>
+  </url>
+  <url>
+    <loc>https://kampusone.app/team/</loc>
+    <lastmod>2026-09-09</lastmod>
+    <image:image>
+      <image:loc>https://kampusone.app/assets/images/team/gideon-kampusone-team-1200.webp</image:loc>
+      <image:title>Gideon — KampusOne team</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kampusone.app/assets/images/team/orobosa-kampusone-team-1200.webp</image:loc>
+      <image:title>Orobosa — KampusOne team</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kampusone.app/assets/images/team/joshua-kampusone-team-1200.webp</image:loc>
+      <image:title>Joshua — KampusOne team</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kampusone.app/blog/</loc>
+    <lastmod>2026-09-09</lastmod>
+  </url>
+  <url>
+    <loc>https://kampusone.app/blog/campus-life-should-feel-connected/</loc>
+    <lastmod>2026-09-09</lastmod>
+  </url>
+  <url>
+    <loc>https://kampusone.app/contact/</loc>
+    <lastmod>2026-09-09</lastmod>
+  </url>
+</urlset>
