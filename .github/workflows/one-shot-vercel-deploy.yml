@@ -1,0 +1,36 @@
+name: One-shot KampusOne landing deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/one-shot-vercel-deploy.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN || secrets.VERCEL_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Vercel credentials
+        shell: bash
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::No Vercel token is available to this repository."
+            exit 1
+          fi
+
+      - name: Link exact landing project
+        shell: bash
+        run: |
+          mkdir -p .vercel
+          printf '%s\n' '{"orgId":"team_abQOZYY74aXZM3GdxfmQWmxP","projectId":"prj_76ZZvXnWYf1Ur255tEBJE1R8lW65"}' > .vercel/project.json
+
+      - name: Deploy production
+        shell: bash
+        run: npx --yes vercel@latest deploy --prod --yes --token "$VERCEL_TOKEN" --scope warriorpikins-projects
