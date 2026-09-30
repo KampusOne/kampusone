@@ -1130,6 +1130,23 @@ a {
   color: var(--sand);
 }
 
+.footer-codehype {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.footer-codehype a {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.footer-codehype img {
+  display: block;
+}
+
 .footer-bottom {
   grid-column: 1 / -1;
   display: flex;
@@ -1425,6 +1442,10 @@ a {
 
   .footer-links > div:last-child {
     grid-column: 1 / -1;
+  }
+
+  .footer-codehype {
+    justify-content: flex-start;
   }
 
   .footer-bottom {
